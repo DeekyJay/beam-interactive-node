@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "build": "rm -rf dist && babel lib --out-dir dist && pbjs lib/robot/tetris.proto > lib/robot/tetris.js && cp lib/robot/tetris.js dist/robot/tetris.js",
+    "build": "rm -rf dist && babel lib --out-dir dist && pbjs -t json lib/robot/tetris.proto > lib/robot/tetris.json && cp lib/robot/tetris.json dist/robot/tetris.js",
     "test": "npm run lint && mocha test/unit --recursive --compilers js:babel-register",
     "testfe": "browserify -r ./dist/frontend:tetris > dist/bundle.js && http-server",
     "integrate": "mocha test/integrate --recursive --compilers js:babel-register",
