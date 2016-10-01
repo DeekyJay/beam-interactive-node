@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "build": "rm -rf dist && babel lib --out-dir dist && cp lib/robot/tetris.proto dist/robot",
+    "build": "rm -rf dist && babel lib --out-dir dist && pbjs lib/robot/tetris.proto > lib/robot/tetris.js && cp lib/robot/tetris.js dist/robot/tetris.js",
     "test": "npm run lint && mocha test/unit --recursive --compilers js:babel-register",
     "testfe": "browserify -r ./dist/frontend:tetris > dist/bundle.js && http-server",
     "integrate": "mocha test/integrate --recursive --compilers js:babel-register",
@@ -32,6 +32,7 @@
   "dependencies": {
     "lodash.assignin": "^4.0.2",
     "lodash.isplainobject": "^4.0.1",
+    "pbjs": "0.0.3",
     "protobufjs": "^5.0.1",
     "varint": "^4.0.0",
     "ws": "^1.1.1"
