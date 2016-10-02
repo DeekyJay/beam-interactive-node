@@ -32,7 +32,6 @@
   "dependencies": {
     "lodash.assignin": "^4.0.2",
     "lodash.isplainobject": "^4.0.1",
-    "pbjs": "0.0.3",
     "protobufjs": "^5.0.1",
     "varint": "^4.0.0",
     "ws": "^1.1.1"
