@@ -38,3 +38,6 @@ npm-debug.log
 
 *.sublime-project
 *.sublime-workspace
+
+# Compile Proto files
+lib/robot/tetris.js
